@@ -4,11 +4,11 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Математическая логика и теория алгоритмов.</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+		<link rel="stylesheet" href="dist/theme/serif.css" id="theme">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
@@ -16,8 +16,510 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section class="center ">
+					<h2>Математическая логика и теория алгоритмов.</h2>
+				</section>
+				<section class="center">
+					<h2>Определение</h2>
+				</section>
+				<section data-markdown="markdown/Mathematical_Logic.md">
+				</section>
+				<section>
+					<section data-markdown="">
+						<script type="text/template">
+							### Логические операции
+							Логические операции — это действия, вследствие которых порождаются новые понятия с использованием уже существующих.
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							### Логические операции бывают:
+							1. Коньюнкция
+							2. Дизьюнкция
+							3. Инверсия
+							4. Имликация
+							5. Эквиваленция
+							6. Исключающее или
+							7. Условная дизъюнкция
+							8. Стрелка Пирса
+							9. Штрих Шеффера
+						</script>
+					</section>
+				</section>
+				<section data-markdown="markdown/Conjunction.md">
+				</section>
+				<section data-markdown="markdown/Disjunction.md">
+				</section>
+				<section data-markdown="markdown/Inversion.md">
+				</section>
+				<section data-markdown="markdown/implication.md">
+				</section>
+				<section>
+					<section data-markdown="">
+						<script type="text/template">
+							### Эквиваленция
+
+							Эквиваленция в информатике — это логическая операция, которая двум высказываниям ставит в соответствие новое высказывание. Оно считается истинным, если оба высказывания либо одновременно истинны, либо одновременно ложны, и ложным во всех остальных случаях. 
+							
+							Обозначение: тогда и только тогда, когда, A $\Leftrightarrow$ B, А~В. 
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							### Эквиваленция
+
+							В разговорной речи эквивалентности соответствует связка «тогда и только тогда, когда», а в математике — «необходимо и достаточно»
+						</script>
+					</section>
+				</section>
+				<section data-markdown="markdown/Exclusive_Or.md">
+				</section>
+				<section data-markdown="markdown/Conditional_Disjunction.md">
+				</section>
+				<section data-markdown="markdown/Pier_Arrow.md">
+				</section>
+				<section data-markdown="markdown/Schaeffer's_Stroke.md">
+				</section>
+				<section data-markdown="markdown/The_Truth_Table.md">
+				</section>
+				<section>
+					<section>
+							<h3>Пример конъюнкции</h3>
+							У меня есть ноутбук и интернет то я поиграть с друзьями <br>
+							A - ноутбук<br>
+							B - интернет
+					</section>
+					<section data-menu-title="Т.И. конъюнкции">
+						<table>
+							<thead>
+								<tr>
+									<td>A</td>
+									<td>B</td>
+									<td>A $\land$ B</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+								</tr>
+								<tr>
+									<td>0</td>
+									<td>1</td>
+									<td>0</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>0</td>
+									<td>0</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+				</section>
+				<section>
+					<section>
+							<h3>Пример дизьюнкции</h3>
+							Если у меня дома Wi-Fi или моб. интернет, я могу поговорить с друзьями по Skype <br>
+							A - Wi-Fi<br>
+							B - Моб. интернет
+					</section>
+					<section data-menu-title="Т.И. дизьюнкции">
+						<table>
+							<thead>
+								<tr>
+									<td>A</td>
+									<td>B</td>
+									<td>A $\lor$ B</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+								</tr>
+								<tr>
+									<td>0</td>
+									<td>1</td>
+									<td>1</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>0</td>
+									<td>1</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>	
+				</section>
+				<section>
+					<section>
+							<h3>Пример инверсия </h3>
+							Неверно, что число 10 - четное.<br>
+					</section>
+					<section data-menu-title="Т.И. инверсия">
+						<table>
+							<thead>
+								<tr>
+									<td>A</td>
+									<td>$\neg$ A</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>0</td>
+									<td>1</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>0</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>	
+				</section>
+				<section>
+					<section>
+							<h3>Пример Имплекации</h3>
+							Если жена сказала мужу выкинуть мусор<br>
+							A - жена сказала выкинуть мусор<br>
+							B - Муж выкинул мусор
+					</section>
+					<section data-menu-title="Т.И. имплекации">
+						<table>
+							<thead>
+								<tr>
+									<td>A</td>
+									<td>B</td>
+									<td>A $\Longrightarrow$ B</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>0</td>
+									<td>0</td>
+									<td>1</td>
+								</tr>
+								<tr>
+									<td>0</td>
+									<td>1</td>
+									<td>1</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>0</td>
+									<td>0</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>	
+				</section>
+				<section>
+					<section>
+							<h3>Пример Эквиваленции</h3>
+							В зачётную книжку выставляется оценка за экзамен тогда и только тогда, когда он сдан<br>
+							A - В зачётную книжку выставляется оценка за экзамен<br>
+							B - Экзамен сдан
+					</section>
+					<section data-menu-title="Т.И. эквиваленции">
+						<table>
+							<thead>
+								<tr>
+									<td>A</td>
+									<td>B</td>
+									<td>A $\Leftrightarrow$ B</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>0</td>
+									<td>0</td>
+									<td>1</td>
+								</tr>
+								<tr>
+									<td>0</td>
+									<td>1</td>
+									<td>0</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>0</td>
+									<td>0</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>	
+				</section>
+				<section>
+					<section>
+							<h3>Пример Исключающее или</h3>
+							Игра в покер<br>
+							A - либо все<br>
+							B - либо ничего
+					</section>
+					<section data-menu-title="Т.И. исключающее или">
+						<table>
+							<thead>
+								<tr>
+									<td>A</td>
+									<td>B</td>
+									<td>A $\bigoplus$ B</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+								</tr>
+								<tr>
+									<td>0</td>
+									<td>1</td>
+									<td>1</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>0</td>
+									<td>1</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>1</td>
+									<td>0</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>	
+				</section>
+				<section>
+					<section>
+							<h3>Пример условной дизъюнкции</h3>
+							Если завтра будет солнечно или я не забуду зонт, то я пойду на пикник.<br>
+							A - будет солнечно<br>
+							B - я пойду на пикник<br>
+							C - я не забуду зонт
+					</section>
+					<section data-menu-title="Т.И. условной дизъюнкции">
+						<table>
+							<thead>
+								<tr>
+									<td>A</td>
+									<td>B</td>
+									<td>C</td>
+									<td>Если С, то А, иначе В</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+								</tr>
+								<tr>
+									<td>0</td>
+									<td>0</td>
+									<td>1</td>
+									<td>1</td>
+								</tr>
+								<tr>
+									<td>0</td>
+									<td>1</td>
+									<td>0</td>
+									<td>0</td>
+								</tr>
+								<tr>
+									<td>0</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+								</tr>								
+								<tr>
+									<td>1</td>
+									<td>0</td>
+									<td>1</td>
+									<td>0</td>
+								</tr>								
+								<tr>
+									<td>1</td>
+									<td>1</td>
+									<td>0</td>
+									<td>1</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>	
+				</section>
+				<section>
+					<section>
+							<h3>Пример Стрелы Пирса</h3>
+							Истинно только, если не идёт дождь и не светит солнце. <br>
+							A - идёт дождь<br>
+							B - светит солнце
+					</section>
+					<section data-menu-title="Т.И. стрелы Пирса">
+						<table>
+							<thead>
+								<tr>
+									<td>A</td>
+									<td>B</td>
+									<td>A $\downarrow$ B</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>0</td>
+									<td>0</td>
+									<td>1</td>
+								</tr>
+								<tr>
+									<td>0</td>
+									<td>1</td>
+									<td>0</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>0</td>
+									<td>0</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>1</td>
+									<td>0</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>	
+				</section>
+				<section>
+					<section>
+							<h3>Пример Штриха Шеффера</h3>
+							Не верно, что свет включён и на улице темно<br>
+							A - Свет включён<br>
+							B - На улице темно
+					</section>
+					<section data-menu-title="Т.И. штриха Шеффера">
+						<table>
+							<thead>
+								<tr>
+									<td>A</td>
+									<td>B</td>
+									<td>A $\uparrow$ B</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>0</td>
+									<td>0</td>
+									<td>1</td>
+								</tr>
+								<tr>
+									<td>0</td>
+									<td>1</td>
+									<td>1</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>0</td>
+									<td>1</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>1</td>
+									<td>0</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>	
+				</section>
+				<section data-markdown="markdown/Algorithms.md">
+				</section>
+				<section data-markdown="markdown/Theory_Of_Algorithms.md">
+				</section>
+				<section>
+					<section data-markdown="">
+						<script type="text/template">
+							### Сложность алгоритма
+							Сложность алгоритма — это числовая характеристика алгоритма, 
+							измеряющая либо сложность его описания, 
+							либо сложность вычисления с помощью этого алгоритма.
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							Обычно у алгоритмов бывает две сложности:
+							- Временная сложность - количество операций, которые выполняются при работе алгоритма, 
+							связанное с объёмом входных данных.
+							- Сложность по памяти- количество памяти, которое нужно алгоритму, 
+							связанное с размером входных данных.
+						</script>
+					</section>
+				</section>
+				<section data-markdown="markdown/Sorting_Algorithm.md"> 
+				</section>
+				<section>
+					<h3>Сортировка пузырком.</h3>
+					<input type="text" name="Array1" placeholder="Введите числа через ,">
+					<button type="button1">Отсортировать</button>
+				</section>
+				<section>
+					<h3>Сортировка вставками.</h3>
+					<input type="text" name="Array2" placeholder="Введите числа через ,">
+					<button type="button2">Отсортировать</button>
+				</section>
+				<section>
+					<h3>Быстрая сортировка.</h3>
+					<input type="text" name="Array3" placeholder="Введите числа через ,">
+					<button type="button3">Отсортировать</button>
+				</section>
+				<section>
+					<h3>Сортировка выбором.</h3>
+					<input type="text" name="Array4" placeholder="Введите числа через ,">
+					<button type="button4">Отсортировать</button>
+				</section>
+				<section>
+					<h3>Сортировка </h3>
+					<input type="text" name="Array5" placeholder="Введите числа через ,">
+					<button type="button5">Отсортировать</button>
+				</section>
+				<section class="center"
+				data-menu-title="Конечный слайд">
+					Спасибо за внимание!!!
+				</section>
 			</div>
 		</div>
 
@@ -31,6 +533,25 @@
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
+				center: false,
+				slideNumber: true,
+				controls: true,
+				dependencies: [
+					{
+						src: 'plugin/menu/menu.js'
+					},
+					{
+						src: 'plugin/fullscreen/fullscreen.js'
+					},
+					{
+						src: 'plugin/katex/katex.js',
+						async:true,
+					}
+				],
+				menu: {
+					numbers: true, 
+					markers: true,
+				},
 
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
