@@ -12,6 +12,7 @@
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+
 	</head>
 	<body>
 		<div class="reveal">
@@ -82,12 +83,12 @@
 				</section>
 				<section data-markdown="markdown/The_Truth_Table.md">
 				</section>
-				<section>
+				<section><!-- И -->
 					<section>
 							<h3>Пример конъюнкции</h3>
-							У меня есть ноутбук и интернет то я поиграть с друзьями <br>
-							A - ноутбук<br>
-							B - интернет
+							Этот треугольник равнобедренный и прямоугольный, то он подходит <br>
+							A - равнобедренный<br>
+							B - прямоугольный
 					</section>
 					<section data-menu-title="Т.И. конъюнкции">
 						<table>
@@ -122,11 +123,11 @@
 							</tbody>
 						</table>
 					</section>
-				</section>
-				<section>
+				</section> 
+				<section><!-- ИЛИ -->
 					<section>
 							<h3>Пример дизьюнкции</h3>
-							Если у меня дома Wi-Fi или моб. интернет, я могу поговорить с друзьями по Skype <br>
+							Чтобы пообщаться с друзьями по сети нужен интернет(Wi-Fi, Моб. интернет). <br>
 							A - Wi-Fi<br>
 							B - Моб. интернет
 					</section>
@@ -164,10 +165,11 @@
 						</table>
 					</section>	
 				</section>
-				<section>
+				<section><!-- Отрицание -->
 					<section>
 							<h3>Пример инверсия </h3>
-							Неверно, что число 10 - четное.<br>
+							A - Марс — планета Солнечной системы.<br>
+							$\neg$ A - Марс — не планета Солнечной системы.
 					</section>
 					<section data-menu-title="Т.И. инверсия">
 						<table>
@@ -190,11 +192,11 @@
 						</table>
 					</section>	
 				</section>
-				<section>
+				<section><!-- Имплекации -->
 					<section>
 							<h3>Пример Имплекации</h3>
 							Если жена сказала мужу выкинуть мусор<br>
-							A - жена сказала выкинуть мусор<br>
+							A - Жена сказала выкинуть мусор<br>
 							B - Муж выкинул мусор
 					</section>
 					<section data-menu-title="Т.И. имплекации">
@@ -231,12 +233,12 @@
 						</table>
 					</section>	
 				</section>
-				<section>
+				<section><!-- Эквиваленции -->
 					<section>
 							<h3>Пример Эквиваленции</h3>
 							В зачётную книжку выставляется оценка за экзамен тогда и только тогда, когда он сдан<br>
-							A - В зачётную книжку выставляется оценка за экзамен<br>
-							B - Экзамен сдан
+							A - Студент принес зачетную книжку на экзмен<br>
+							B - Студент сдал экзамен 
 					</section>
 					<section data-menu-title="Т.И. эквиваленции">
 						<table>
@@ -272,12 +274,12 @@
 						</table>
 					</section>	
 				</section>
-				<section>
+				<section><!-- Исключающее или -->
 					<section>
 							<h3>Пример Исключающее или</h3>
-							Игра в покер<br>
-							A - либо все<br>
-							B - либо ничего
+							Этот треугольник тупоугольный или остроугольный<br>
+							A - тупоугольный<br>
+							B - остроугольный
 					</section>
 					<section data-menu-title="Т.И. исключающее или">
 						<table>
@@ -313,7 +315,7 @@
 						</table>
 					</section>	
 				</section>
-				<section>
+				<section><!-- условной дизъюнкции -->
 					<section>
 							<h3>Пример условной дизъюнкции</h3>
 							Если завтра будет солнечно или я не забуду зонт, то я пойду на пикник.<br>
@@ -384,7 +386,7 @@
 						</table>
 					</section>	
 				</section>
-				<section>
+				<section><!-- Стрелы Пирса -->
 					<section>
 							<h3>Пример Стрелы Пирса</h3>
 							Истинно только, если не идёт дождь и не светит солнце. <br>
@@ -425,7 +427,7 @@
 						</table>
 					</section>	
 				</section>
-				<section>
+				<section><!-- Штриха Шеффера -->
 					<section>
 							<h3>Пример Штриха Шеффера</h3>
 							Не верно, что свет включён и на улице темно<br>
@@ -481,6 +483,7 @@
 					</section>
 					<section data-markdown>
 						<script type="text/template">
+							### Какие бывают сложности у алгаритмов
 							Обычно у алгоритмов бывает две сложности:
 							- Временная сложность - количество операций, которые выполняются при работе алгоритма, 
 							связанное с объёмом входных данных.
@@ -489,32 +492,78 @@
 						</script>
 					</section>
 				</section>
-				<section data-markdown="markdown/Sorting_Algorithm.md"> 
+				<section>
+					<section data-markdown="">
+						<script type="text/template">
+							### Алгоритмы сортировки
+							Алгоритм сортировки — это алгоритм для упорядочивания элементов в списке. 
+							В случае, когда элемент в списке имеет несколько полей, поле, 
+							служащее критерием порядка, называется ключом сортировки.
+						</script> 
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							### Виды сортировок
+							Алгоритм сортировки бывают:
+							- Сортировка пузырьком.
+							- Сортировка вставками.
+							- Быстрая сортировка.
+							- Сортировка выбором.
+							- Пирамидальная сортировка.
+							- Блочный (корзинный) приём.
+							- Сортировка слиянием.
+						</script>
+					</section>
 				</section>
 				<section>
 					<h3>Сортировка пузырком.</h3>
-					<input type="text" name="Array1" placeholder="Введите числа через ,">
-					<button type="button1">Отсортировать</button>
+					<input type="text" id="Array1" placeholder="Введите числа через ,">
+					<input type="button" value="Отсортировать" id="send_Array1">
+					<div id="result1" style="margin-top: 10px;"></div>
 				</section>
 				<section>
 					<h3>Сортировка вставками.</h3>
-					<input type="text" name="Array2" placeholder="Введите числа через ,">
-					<button type="button2">Отсортировать</button>
+					<input type="text" id="Array2" placeholder="Введите числа через ,">
+					<input type="button" value="Отсортировать" id="send_Array2">
+					<div id="result2" style="margin-top: 10px;"></div>
 				</section>
 				<section>
 					<h3>Быстрая сортировка.</h3>
-					<input type="text" name="Array3" placeholder="Введите числа через ,">
-					<button type="button3">Отсортировать</button>
+					<input type="text" id="Array3" placeholder="Введите числа через ,">
+					<input type="button" value="Отсортировать" id="send_Array3">
+					<div id="result3" style="margin-top: 10px;"></div>
 				</section>
 				<section>
 					<h3>Сортировка выбором.</h3>
-					<input type="text" name="Array4" placeholder="Введите числа через ,">
-					<button type="button4">Отсортировать</button>
+					<input type="text" id="Array4" placeholder="Введите числа через ,">
+					<input type="button" value="Отсортировать" id="send_Array4">
+					<div id="result4" style="margin-top: 10px;"></div>
 				</section>
 				<section>
-					<h3>Сортировка </h3>
-					<input type="text" name="Array5" placeholder="Введите числа через ,">
-					<button type="button5">Отсортировать</button>
+					<h3>Сортировка слиянием </h3>
+					<input type="text" id="Array5" placeholder="Введите числа через ,">
+					<input type="button" value="Отсортировать" id="send_Array5">
+					<div id="result5" style="margin-top: 10px;"></div>
+				</section>
+				<section class="center">
+					<h4>Исходный код для сортировки пузырком.</h4>
+					<img src="../IMG/Array1.PNG" alt="Сортировка пузырком" height="500px" width="900px">
+				</section>
+				<section class="center">
+					<h4>Исходный код для сортировки вставками.</h4>
+					<img src="../IMG/Array2.PNG" alt="Сортировка вставка" height="500px" width="900px">
+				</section>
+				<section class="center">
+					<h4>Исходный код для быстрой сортировки.</h4>
+					<img src="../IMG/Array3.PNG" alt="Быстрая сортировка" height="500px" width="900px">
+				</section>
+				<section class="center">
+					<h4>Исходный код для сортировки выбором.</h4>
+					<img src="../IMG/Array4.PNG" alt="Сортировка выбором" height="500px" width="900px">
+				</section>
+				<section class="center">
+					<h4>Исходный код для сортировки слиянием.</h4>
+					<img src="../IMG/Array5.PNG" alt="Сортировка слиянием" height="500px" width="900px">
 				</section>
 				<section class="center"
 				data-menu-title="Конечный слайд">
@@ -557,5 +606,6 @@
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
 		</script>
+<script src="laba.js"></script>
 	</body>
 </html>

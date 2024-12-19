@@ -1,0 +1,378 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My World</title>
+    <link rel="stylesheet" href="baca.css">
+    <script>
+        console.log('Hello world')
+    </script>
+</head>
+<body>
+    <h1>Моя первая страница!</h1>
+    <div id="Ball">
+        <h2 class="element">Мячик</h2>
+    <b>Наша Таня громко плачет:</b><br>
+    <i>Уронила в речку мячик.</i><br>
+    -Тише, Танечка, не плачь:<br>
+    <span class="string">Не утонет в речке мяч.</span><br>
+    <br>
+    Автор: А.Л.Барто</h3>  
+    </div>
+    <div id="Cartinti">
+        <h2 class="element">Весёлые картинки</h2>
+        <img src="https://www.karusel-tv.ru/media/suit/in1200x720/media/broadcast_cover/2019/04/1555497238235464_vlcsnap_2019_04_17_13h12m34s359.png" alt="Ерашал:)" width="430">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNvOPr0wMsCWn3fRo2F38kxZQA_i4mDcB4Cw&s" alt="Мемы с Тони старком" height="">
+        
+    </div>
+        <div id="Zvonci">
+        <h2 class="element">Расписание звонков</h2>
+        <h3>
+            <ol>
+                <li>08:20 - 09:50</li>
+                <li>10:00 - 11:30</li>
+                    <ul>Перемена 40 минут</ul>
+                <li>12:10 - 13:40</li>
+                <li>13:50 - 15:20</li>
+                <li>15:30 - 17:00</li>
+                    <ul>Перемена 20 минут</ul>
+                <li>17:20 - 18:50</li>
+                <li>19:00 - 20:30</li>
+            </ol>
+        </h3>
+    </div>
+    <div id="Pars">
+        <h2 class="element">Расписание пар на чт</h2>
+        <table>
+            <thead>
+                <tr>
+                    <td>№ Пары</td>
+                    <td>Наз. пред</td>
+                    <td>Аудитория</td>
+                    <td>Преподователь</td>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                        <td>1(10:00-11:30)</td>
+                        <td>Пар.прог(пр.)</td>
+                        <td>216\4к</td>
+                        <td>Деев О.А.</td>
+                    </tr>
+                    <tr>
+                        <td>2(12:10-13:40)</td>
+                        <td> Пар.прог(л.)</td>
+                        <td>210\4к</td>
+                        <td>Деев О.А.</td>
+                    </tr>
+            </tbody> 
+        </table>
+        
+    </div>
+    <div id="Dnevnic">
+        <h2 class="element">Дневник</h2>
+        <p><b>Введите ФИО</b></p>
+        <input type="text" name="F" placeholder="Фамилия" ><br><br>
+        <input type="text" name="I" placeholder="Имя"><br><br>
+        <input type="text" name="O" placeholder="Отчество">
+        <form>
+            <p><b>Выберите пол</b></p>
+            <p><input name="M" type="radio" value="M">М
+            <input name="HZ" type="radio" value="HZ">Ж</p>
+        </form>
+        <p><b>В какой школе учитесь?</b></p>
+        <textarea name="School" cols="30" rows="4" placeholder="Введите полное название своей школы"></textarea>
+        <p><b>Населенный пункт</b></p>
+        <select size="6" name="Nahc. Punct">
+            <option disabled>Выберите населенный пункт</option>
+            <option value="t1">Ижевск</option>
+            <option value="t2">Глазов</option>
+            <option value="t3">Можга</option>
+            <option value="t4">Сарапул</option>
+            <option value="t5">Воткинск</option>
+        </select>
+        <p><b>В каком вы классе?</b></p>
+        <input type="text" name="Class" placeholder="Введите класс" >
+        <form>
+            <p><input name="ClassA" type="radio" value="ClassA">А</p>
+            <p><input name="ClassB" type="radio" value="ClassB">Б</p>
+            <p><input name="ClassC" type="radio" value="ClassC">В</p>
+        </form>
+        <p><b>Выберите цвет обложки дневника</b></p>
+        <input type="color" name="color">
+        <p><b>Год начала учебного года</b></p>
+        <input type="text" name="year" placeholder="Введите год начала учебного года" >
+        <br><br>
+        <div>
+            <input type="submit" id="create" value="Создать">
+        </div>
+        </div>
+        
+    <div id="Bugalteria">
+        <h2 class="element">Бухгалтерия</h2>
+        <div id="wrapper"></div>
+    </div>
+
+
+    <script>
+        let list = [
+                {
+                    "surname": 'Иванов', //Фамилия
+                    "name": 'Иван', //Имя
+                    "patronymic": 'Иванович', //Отчество 
+                    "birthday": '1987-11-30', //Дата рождения в формате ГГГГ-ММ-ДД
+                    "experience": 5, //Стаж работы
+                    "salary": 48200, //Зарплата гросс в месяц
+                    "salary13": 3000, //Годовая премия
+                    "salary13": 3000, //Годовая премия
+                    "gender": 'm', //Премия
+                    "vacation": 0, //Месяц отпуска
+                },
+                {
+                    "surname": 'Петров', 
+                    "name": 'Петр', 
+                    "patronymic": 'Петрович', 
+                    "birthday": '2001-01-01',
+                    "experience": 0,
+                    "salary": 27600,
+                    "salary13": 1000,
+                    "gender": 'm',
+                    "vacation": 8,
+                },
+                {
+                    "surname": 'Капустина', 
+                    "name": 'Ирина', 
+                    "patronymic": 'Николаевна', 
+                    "birthday": '1992-02-02',
+                    "experience": 4,
+                    "salary": 36000,
+                    "salary13": 4000,
+                    "gender": 'f',
+                    "vacation": 3,
+                },
+                {
+                    "surname": 'Билл', 
+                    "name": 'Гейтс', 
+                    "patronymic": '', 
+                    "birthday": '1955-10-28',
+                    "experience": 1,
+                    "salary": 16900,
+                    "salary13": 100,
+                    "gender": 'm',
+                    "vacation": 11,
+                },
+                {
+                    "surname": 'Ложкина', 
+                    "name": 'Галина', 
+                    "patronymic": 'Ильинична', 
+                    "birthday": '2002-01-13',
+                    "experience": 1,
+                    "salary": 80000,
+                    "salary13": 100000,
+                    "gender": 'f',
+                    "vacation": 6,
+                },
+                {
+                    "surname": 'Матрос', 
+                    "name": 'Капитолия', 
+                    "patronymic": 'Владовна', 
+                    "birthday": '1975-04-20',
+                    "experience": 20,
+                    "salary": 90000,
+                    "salary13": 4000,
+                    "gender": 'f',
+                    "vacation": 7,
+                },
+                {
+                    "surname": 'Елисейская', 
+                    "name": 'Италия', 
+                    "patronymic": 'Франсовна', 
+                    "birthday": '1999-08-12',
+                    "experience": 3,
+                    "salary": 36700,
+                    "salary13": 4000,
+                    "gender": 'f',
+                    "vacation": 4,
+                },
+                {
+                    "surname": 'Строгая', 
+                    "name": 'Лада', 
+                    "patronymic": '', 
+                    "birthday": '1990-08-15',
+                    "experience": 7,
+                    "salary": 69000,
+                    "salary13": 3600,
+                    "gender": 'f',
+                    "vacation": 9,
+                },
+                {
+                    "surname": 'Император', 
+                    "name": 'Павел', 
+                    "patronymic": 'Григорьевич', 
+                    "birthday": '1970-12-19',
+                    "experience": 7,
+                    "salary": 28999,
+                    "salary13": 3900,
+                    "gender": 'm',
+                    "vacation": 1,
+                },
+                {
+                    "surname": 'Ватрушкин', 
+                    "name": 'Петр', 
+                    "patronymic": 'Семенович', 
+                    "birthday": '2000-05-13',
+                    "experience": 1,
+                    "salary": 200000,
+                    "salary13": 0,
+                    "gender": 'm',
+                    "vacation": 5,
+                },
+            ];
+            const monthList= [
+                ['Января','Январь'],
+                ['Февраля','Февраль'],
+                ['Марта','Март'],
+                ['Апреля','Апрель'],
+                ['Мая','Май'],
+                ['Июня','Июнь'],
+                ['Июля','Июль'],
+                ['Августа','Август'],
+                ['Сентября','Сентябрь'],
+                ['Октября','Октябрь'],
+                ['Ноября','Ноябрь'],
+                ['Декабря','Декабрь']
+            ];
+            for(let i in list){
+                let net=netSalary(list[i].salary);
+                let year = yearSalary(net, list[i].salary13);
+                let tax = taxReturn(year);
+                let newS = newSalary(list[i].salary);
+                let ageY = age(list[i].birthday);
+                let remains= remainstoPension(list[i].gender,ageY);
+                let birt= birthday(list[i].birthday,monthList);
+                console.log(list[i].surname, birt);
+            }          
+            function birthday(birthday,monthList){
+                let tempDate = new Date(birthday);
+                return tempDate.getDate()+"."+monthList[tempDate.getMonth()][0]+'.'+tempDate.getFullYear();
+            }
+
+            function remainstoPension(gender,age){
+                let months = gender==='m'?65*12:60*12;
+                let remainsMonth= months-age[0]*12+age[1];
+                return[Math.floor(remainsMonth/12), 12 - remainsMonth %12];
+            }
+            function age(birthday){
+                let today = new Date();
+                let age = new Date(birthday);
+                let year = today.getFullYear()-age.getFullYear();
+                let month = today.getMonth()-age.getMonth();
+                if(month<0){
+                    month+=12;
+                    year-=1;
+                }
+                return[year, month]
+            }
+            function newSalary(salary){
+                return +(1.078*salary).toFixed(2);
+            }
+            function taxReturn(yearSalary){
+                let tax = Math.round(.13*yearSalary);
+                return tax < 1 ? 1 : tax;
+            }
+
+            function yearSalary(netSalary, salary13){
+                return +(11*netSalary + .87*salary13).toFixed(2);
+            }
+            function netSalary(salary){
+                return +(salary*1.15*0.87).toFixed(2);
+            }
+
+            let table = `
+<table><thead>
+    <tr>
+        <th>№</th>
+        <th>ФИО</th>
+        <th>Дата рождения</th>
+        <th>Возраст</th>
+        <th>Зп до вычета налогов</th>`;
+        for (let j in monthList){
+            table +=`<th>${monthList[j][1]}</th>`;
+        }
+        table+= `
+        <th>Зп в 2025</th>
+        <th>Об. доход</th>
+        <th>К вычету</th>
+        <th>Ост. до песнии</th>
+    </tr>
+</thear>
+<tbody>
+`;
+for (let i in list){
+    let ys=yearSalary(netSalary(list[i].salary),list[i].salary13);
+    let rtp = remainstoPension(list[i].gender, age(list[i].birthday))[0];
+    table+=`
+<tr>
+    <td>${+i+1}</td>
+    <td>${list[i].surname} ${list[i].name} ${list[i].patronymic}</td>
+    <td>${birthday(list[i].birthday,monthList)}</td>
+    <td>${age(list[i].birthday)[0]}${ageCase(age(list[i].birthday)[0])}</td>
+    <td>${list[i].salary}&#x20bd;</td>`;
+    for (let j=0; j<11;j++){
+        table += `<td ${j==list[i].vacation ? 'class="vacation"':''}>${netSalary(list[i].salary)}&#x20bd;</td>`;
+    }
+    table +=`
+    <td ${11==list[i].vacation ? 'class="vacation"':''}>$${newSalary(list[i].salary)+newSalary(list[i].salary13)}&#x20bd;</td>
+    
+    <td>${newSalary(list[i].salary)}&#x20bd;</td>
+    <td>${ys}&#x20bd;</td>
+    <td>${taxReturn(ys)}&#x20bd;</td>
+    <td>${rtp>0?rtp+ageCase(rtp):'На пенсии'}</td>
+</tr>
+    `;
+}
+
+table +=`</tbody></table>`;
+document.querySelector('#wrapper').innerHTML = table;
+    function ageCase(age){
+        if (age % 10 ===1 && age % 100 !==11){
+            return ' год';
+        }
+        else if (
+            (age%10===2 || age %10 ===3 || age%10===4)&&
+            age%100!== 12 && age%100!==13 && age%100!==14
+        ){
+            return' года';
+        }
+        return ' лет';
+    }
+document.querySelector('#create').onclick=(e)=> {
+    e.preventDefault();
+    let newWin= window.open("about:blank", 'Дневник',"width=420,heihg=594");
+    
+    let template= `
+    <style>
+        body{
+            text-align:center;
+            font-size: large;
+            margin-top:100px;
+            background-color: ${document.querySelector('#color').value};
+        }
+    </style>
+    <h1>Дневник</h1>
+    <div>Учен${document.querySelector('[name=gender]:checked').value=='male'?'ика':'ицы'} 
+        ${document.querySelector('[name="Class]').value}класса</div>
+        <div>${document.querySelector('[name=School]').value}</div>
+        <div>${document.querySelector('[name=Nahc. Punct]').value}</div>
+        <div>${document.querySelector('[name=F]').value}</div>
+        <div>${document.querySelector('[name=I]').value}</div>
+        <div>${document.querySelector('[name=O]').value}</div>
+        <div>${document.querySelector('#year').value}/${+document.querySelector('[name="year"]').value+1} учебного года</div>
+        `;
+    newWin.document.write(template);
+    };
+    </script>
+</body>
+</html>
