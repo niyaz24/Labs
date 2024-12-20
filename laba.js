@@ -18,8 +18,8 @@ function and(A,B) {
 // Вызов функции
 and(A,B);
 
-// Сортировка
-function Arr1(arr1) {
+// Сортировка пузырком
+function BubbleSort(arr1) {
     let n = arr1.length;
     for (let i = 0; i < n - 1; i++) {
         for (let j = 0; j < n - i - 1; j++) {
@@ -28,17 +28,29 @@ function Arr1(arr1) {
                 let temp = arr1[j];
                 arr1[j] = arr1[j + 1];
                 arr1[j + 1] = temp;
+                displayArray1(arr1); // Выводим текущее состояние массива после каждой перестановки
             }
         }
     }
     return arr1;
 }
 
+// Функция для отображения текущего состояния массива
+function displayArray1(arr) {
+    const resultDiv = document.getElementById('result1');
+    resultDiv.innerHTML += arr.join(', ') + '<br>'; // Добавляем текущее состояние массива
+}
+
 function DisplayArra1() {
     const input = document.getElementById('Array1').value;
     const array = input.split(',').map(Number); // Разделяем строку и преобразуем в массив чисел
-    const sortedArray = Arr1(array); // Сортируем массив
-    document.getElementById('result1').innerText = 'Отсортированный массив: ' + sortedArray.join(', '); // Выводим результат
+    if (array.length === 0 || array.some(isNaN)) {
+        document.getElementById('result1').innerText = 'Введите корректные числа!';
+        return;
+    }
+    document.getElementById('result1').innerHTML = ''; // Очищаем предыдущий результат
+    const sortedArray = BubbleSort(array); // Сортируем массив
+    document.getElementById('result1').innerHTML += 'Отсортированный массив: ' + sortedArray.join(', '); // Выводим результат
 }
 
 // Обработчик события для кнопки
@@ -51,38 +63,52 @@ document.getElementById('Array1').addEventListener('keypress', function(event) {
     }
 });
 
+
 // Функция сортировки вставками
 function insertionSort(arr) {
     let len = arr.length;
     for (let i = 1; i < len; i++) {
         let key = arr[i];
         let j = i - 1;
+        // Сдвигаем элементы, которые больше ключа, на одну позицию вперед
         while (j >= 0 && arr[j] > key) {
             arr[j + 1] = arr[j];
             j--;
         }
         arr[j + 1] = key;
+        displayArray(arr); // Выводим текущее состояние массива после вставки
     }
     return arr;
 }
 
+// Функция для отображения текущего состояния массива
+function displayArray(arr) {
+    const resultDiv = document.getElementById('result2');
+    resultDiv.innerHTML += arr.join(', ') + '<br>'; // Добавляем текущее состояние массива
+}
 
-function sortAndDisplay() {
+function sortArray2() {
     const input = document.getElementById('Array2').value;
-    const array = input.split(',').map(Number); // Разделяем строку и преобразуем в массив чисел
+    const array = input.split(',').map(Number); // Преобразуем строку в массив чисел
+    if (array.length === 0 || array.some(isNaN)) {
+        document.getElementById('result2').innerText = 'Введите корректные числа!';
+        return;
+    }
+    document.getElementById('result2').innerHTML = ''; // Очищаем предыдущий результат
     const sortedArray = insertionSort(array); // Сортируем массив
-    document.getElementById('result2').innerText = 'Отсортированный массив: ' + sortedArray.join(', '); // Выводим результат
+    document.getElementById('result2').innerHTML += 'Отсортированный массив: ' + sortedArray.join(', '); // Отображение результата
 }
 
 // Обработчик события для кнопки
-document.getElementById('send_Array2').addEventListener('click', sortAndDisplay);
+document.getElementById('send_Array2').addEventListener('click', sortArray2);
 
 // Обработчик события для нажатия клавиши в поле ввода
 document.getElementById('Array2').addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
-        sortAndDisplay(); // Вызываем сортировку при нажатии Enter
+        sortArray2(); // Вызываем сортировку при нажатии Enter
     }
 });
+
 
 
 
@@ -101,29 +127,39 @@ function quickSort(arr) {
             right.push(arr[i]);
         }
     }
+
+    // Вывод текущего состояния массива перед рекурсией
+    displayArray3([...left, pivot, ...right]);
+
     // Рекурсивно сортируем подмассивы и объединяем их с опорным элементом
     return [...quickSort(left), pivot, ...quickSort(right)];
 }
 
-// Функция для отображения результата быстрой сортировки
-function sortAndDisplayQuick() {
+// Функция для отображения текущего состояния массива
+function displayArray3(arr) {
+    const resultDiv = document.getElementById('result3');
+    resultDiv.innerHTML += arr.join(', ') + '<br>'; // Добавляем текущее состояние массива
+}
+
+function sortArray3() {
     const input = document.getElementById('Array3').value;
     const array = input.split(',').map(Number).filter(num => !isNaN(num)); // Преобразование ввода в массив чисел
     if (array.length === 0) {
         document.getElementById('result3').innerText = 'Введите корректные числа!';
         return;
     }
+    document.getElementById('result3').innerHTML = ''; // Очищаем предыдущий результат
     const sortedArray = quickSort(array); // Сортировка массива
-    document.getElementById('result3').innerText = 'Отсортированный массив: ' + sortedArray.join(', '); // Отображение результата
+    document.getElementById('result3').innerHTML += 'Отсортированный массив: ' + sortedArray.join(', '); // Отображение результата
 }
 
 // Обработчик событий для кнопки
-document.getElementById('send_Array3').addEventListener('click', sortAndDisplayQuick);
+document.getElementById('send_Array3').addEventListener('click', sortArray3);
 
 // Обработчик событий для клавиши Enter
 document.getElementById('Array3').addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
-        sortAndDisplayQuick();
+        sortArray3();
     }
 });
 
@@ -141,15 +177,22 @@ function selectionSort(arr) {
         if (minIndex !== i) {
             [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]];
         }
+        displayArray4(arr); // Выводим текущее состояние массива после каждой итерации внешнего цикла
     }
     return arr;
+}
+
+function displayArray4(arr) {
+    const resultDiv = document.getElementById('result4');
+    resultDiv.innerHTML += arr.join(', ') + '<br>'; // Добавляем текущее состояние массива
 }
 
 function sortArray4() {
     const input = document.getElementById('Array4').value;
     const array = input.split(',').map(Number);
+    document.getElementById('result4').innerHTML = ''; // Очищаем предыдущий результат
     const sortedArray = selectionSort(array);
-    document.getElementById('result4').innerText = 'Отсортированный массив: ' + sortedArray.join(', ');
+    document.getElementById('result4').innerHTML += 'Отсортированный массив: ' + sortedArray.join(', ');
 }
 
 document.getElementById('send_Array4').addEventListener('click', sortArray4);
@@ -169,7 +212,9 @@ function mergeSort(arr) {
     const mid = Math.floor(arr.length / 2);
     const left = mergeSort(arr.slice(0, mid));
     const right = mergeSort(arr.slice(mid));
-    return merge(left, right);
+    const merged = merge(left, right);
+    displayArray5(merged); // Выводим текущий массив после слияния
+    return merged;
 }
 
 function merge(left, right) {
@@ -190,19 +235,26 @@ function merge(left, right) {
     return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
 }
 
-function sortArray() {
-    const input = document.getElementById('Array5').value;
-    const array = input.split(',').map(Number);
-    const sortedArray = mergeSort(array);
-    document.getElementById('result5').innerText ='Отсортированный массив: ' + sortedArray.join(', ');
+function displayArray5(arr) {
+    const resultDiv = document.getElementById('result5');
+    resultDiv.innerHTML += arr.join(', ') + '<br>'; // Добавляем текущее состояние массива
 }
 
-document.getElementById('send_Array5').addEventListener('click', sortArray);
+function sortArray5() {
+    const input = document.getElementById('Array5').value;
+    const array = input.split(',').map(Number);
+    document.getElementById('result5').innerHTML = ''; // Очищаем предыдущий результат
+    const sortedArray = mergeSort(array); // Сортируем массив и получаем отсортированный результат
+    // Выводим окончательный отсортированный массив
+    document.getElementById('result5').innerHTML += 'Отсортированный массив: ' + sortedArray.join(', ');
+}
+
+document.getElementById('send_Array5').addEventListener('click', sortArray5);
 
 // Обработчик события нажатия клавиши
 document.getElementById('Array5').addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
-        sortArray();
+        sortArray5();
     }
 });
 
