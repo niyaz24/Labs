@@ -34,7 +34,7 @@ function Arr1(arr1) {
     return arr1;
 }
 
-function sortAndDisplay() {
+function DisplayArra1() {
     const input = document.getElementById('Array1').value;
     const array = input.split(',').map(Number); // Разделяем строку и преобразуем в массив чисел
     const sortedArray = Arr1(array); // Сортируем массив
@@ -42,12 +42,12 @@ function sortAndDisplay() {
 }
 
 // Обработчик события для кнопки
-document.getElementById('send_Array1').addEventListener('click', sortAndDisplay);
+document.getElementById('send_Array1').addEventListener('click', DisplayArra1);
 
 // Обработчик события для нажатия клавиши в поле ввода
 document.getElementById('Array1').addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
-        sortAndDisplay(); // Вызываем сортировку при нажатии Enter
+        DisplayArra1(); // Вызываем сортировку при нажатии Enter
     }
 });
 
@@ -145,19 +145,19 @@ function selectionSort(arr) {
     return arr;
 }
 
-function sortArray() {
+function sortArray4() {
     const input = document.getElementById('Array4').value;
     const array = input.split(',').map(Number);
     const sortedArray = selectionSort(array);
-    document.getElementById('result4').innerText = sortedArray.join(', ');
+    document.getElementById('result4').innerText = 'Отсортированный массив: ' + sortedArray.join(', ');
 }
 
-document.getElementById('send_Array4').addEventListener('click', sortArray);
+document.getElementById('send_Array4').addEventListener('click', sortArray4);
 
 // Обработчик события нажатия клавиши
 document.getElementById('Array4').addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
-        sortArray();
+        sortArray4();
     }
 });
 
@@ -194,7 +194,7 @@ function sortArray() {
     const input = document.getElementById('Array5').value;
     const array = input.split(',').map(Number);
     const sortedArray = mergeSort(array);
-    document.getElementById('result5').innerText = sortedArray.join(', ');
+    document.getElementById('result5').innerText ='Отсортированный массив: ' + sortedArray.join(', ');
 }
 
 document.getElementById('send_Array5').addEventListener('click', sortArray);
